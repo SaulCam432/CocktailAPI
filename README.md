@@ -22,4 +22,6 @@ Contando con una pantalla enfocada en vizualizar los ingredientes he instruccion
 
 ![Detalles](https://github.com/SaulCam432/CocktailAPI/assets/61199564/493df0f8-df08-4c2e-8377-1153f90e251f)
 
+Enlace a la API: https://www.thecocktaildb.com
+
 

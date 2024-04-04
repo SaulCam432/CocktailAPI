@@ -12,6 +12,7 @@ import com.saulcam.cocktailapi.ui.adapters.cocktailList.CocktailListAdapter
 import com.saulcam.cocktailapi.model.server.RetrofitServiceFactory
 import com.saulcam.cocktailapi.databinding.ActivityMainBinding
 import com.saulcam.cocktailapi.model.drink.Drink
+import com.saulcam.cocktailapi.ui.utils.showMessage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -40,8 +41,9 @@ class MainActivity : AppCompatActivity() {
             val searchCocktail = binding.etSearchByName.text.toString()
             if(!searchCocktail.isNullOrEmpty()){
                 searchByName(searchCocktail)
+                binding.etSearchByName.setText("")
             }else{
-                Toast.makeText(this@MainActivity, "Insert a value to search", Toast.LENGTH_LONG).show()
+                messageError("Insert a value to search")
             }
         }
     }
@@ -57,7 +59,7 @@ class MainActivity : AppCompatActivity() {
                     adapter = CocktailListAdapter(this@MainActivity, drinks)
                     binding.rvListCocktails.adapter = adapter
                 }else{
-                    Toast.makeText(this@MainActivity, "There aren't drinks with letter: $l ", Toast.LENGTH_SHORT).show()
+                    messageError("There aren't drinks with letter: $l ")
                 }
 
             }
@@ -68,12 +70,16 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             val search = services.getByName(cocktail)
             withContext(Dispatchers.Main) {
-                drinks.clear()
-                drinks.addAll(search.drinks)
 
-                //Log.d("busquedsa", "${search.drinks}")
-                adapter = CocktailListAdapter(this@MainActivity, drinks)
-                binding.rvListCocktails.adapter = adapter
+                if(!search.drinks.isNullOrEmpty()){
+                    drinks.clear()
+                    drinks.addAll(search.drinks)
+                    adapter = CocktailListAdapter(this@MainActivity, drinks)
+                    binding.rvListCocktails.adapter = adapter
+                }else{
+                    messageError("There aren't drinks with this name")
+                }
+
             }
         }
     }
@@ -86,12 +92,21 @@ class MainActivity : AppCompatActivity() {
         binding.spinnerFilterLetter.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
             override fun onItemSelected(adapterview: AdapterView<*>?, view: View?, position: Int, l: Long) {
                 getCocktailsByLetterA(letter[position])
+                binding.etSearchByName.setText("")
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
             }
 
         }
+    }
+
+    private fun messageSucces(message: String){
+        Toast(this).showMessage(message, this, "success")
+    }
+
+    private fun messageError(message: String){
+        Toast(this).showMessage(message, this, "error")
     }
 
 

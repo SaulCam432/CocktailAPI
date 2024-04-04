@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="casa_blanca">#f6b151</color>
+    <color name="tan_hide">#f68e5a</color>
+    <color name="burnt_sienna">#e46944</color>
+    <color name="night_shanz">#b43c4e</color>
+    <color name="eminence">#6c2c72</color>
+
+    <color name="border_input">#1A070707</color>
+    <color name="background_input">#08000000</color>
+
+</resources>

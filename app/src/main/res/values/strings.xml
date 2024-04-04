@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Cocktail API</string>
+
+    <string name="app">Cocktail APP</string>
+    <string name="txtSearchByName">Search By Name</string>
+    <string name="btnSearchByName">Search</string>
+    <string name="tvSelectCocktails">Select the Cocktail to learn</string>
+    <string name="tvCocktailName">name</string>
+    <string name="tvCocktailType">Type</string>
+    <string name="tvTitleNameDetail">Name of the Cocktail</string>
+    <string name="tvNameDetail">Name</string>
+    <string name="tvTitleIngredientsDetail">Ingredients</string>
+    <string name="tvTitleInstructionsDetail">Instructions</string>
+    <string name="tvInstructionsDetail">Instructions</string>
+    <string name="tvIngredient">Ingredient</string>
+    <string name="tvMeasure">Measure</string>
+    <string name="point">-</string>
+</resources>

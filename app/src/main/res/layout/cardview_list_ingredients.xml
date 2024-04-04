@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="25dp"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/point"
+            android:fontFamily="@font/roboto_black"
+            android:textSize="15sp"
+            android:layout_marginStart="20dp"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/tvIngredientList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvIngredient"
+            android:fontFamily="@font/roboto_condensed_italic"
+            android:textSize="15sp"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="1dp"/>
+
+        <TextView
+            android:id="@+id/tvMeasureList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tvMeasure"
+            android:fontFamily="@font/roboto_condensed_italic"
+            android:textSize="15sp"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
